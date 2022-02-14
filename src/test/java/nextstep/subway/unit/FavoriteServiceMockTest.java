@@ -59,7 +59,7 @@ public class FavoriteServiceMockTest {
         favoriteService.createFavorite(MEMBER_ID, favoriteRequest);
 
         List<FavoriteResponse> responseList = favoriteService.findFavorite(MEMBER_ID);
-        assertThat(responseList.size()).isEqualTo(1);
+        assertThat(responseList).hasSize(1);
         assertThat(responseList.get(0).getSource().getName()).isEqualTo("강남역");
         assertThat(responseList.get(0).getTarget().getName()).isEqualTo("역삼역");
     }
